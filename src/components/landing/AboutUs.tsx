@@ -5,7 +5,7 @@ export function AboutUs() {
   return (
     <div className="w-full px-4 py-8  sm:py-10 sm:px-8 my-8 backg sm:my-12">
       <div className="w-full flex xl:flex-row flex-col items-start justify-start gap-6">
-        <div className="flex text-white flex-col items-start justify-start gap-y-4 sm:gap-y-6 w-full xl:w-[50%]">
+        <div className="flex text-white flex-col items-start justify-start gap-y-4 sm:gap-y-6 w-full xl:w-[65%]">
           <h1 className="text-xl sm:text-4xl font-semibold">
             What Makes Us Different
           </h1>
@@ -35,7 +35,7 @@ export function AboutUs() {
 
           <Button className="rounded-[3rem] text-purple-500 bg-white h-14 px-8 sm:px-10">Get Started Now</Button>
         </div>
-        <div className="w-full max-w-2xl xl:w-[50%]">
+        <div className="w-full max-w-2xl xl:w-[35%]">
             <img src="https://trustflick.com/assets/landing/img/about-img1.jpg" alt="flick" className="w-full h-fit" />
         </div>
       </div>

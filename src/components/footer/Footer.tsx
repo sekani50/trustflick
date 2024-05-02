@@ -1,89 +1,69 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/png/logo.webp";
+import { Input } from "../ui/Input";
+import { Button } from "../ui/Button";
+
 export function Footer() {
+  const navigate = useNavigate();
   return (
-    <footer className="w-full px-4 py-8 sm:px-8 sm:py-10 bg-[#eeeeee]">
-      <div className="grid w-full grid-cols-1 gap-4 items-center md:items-start md:grid-cols-4">
-        <div className="flex flex-col items-start justify-start gap-y-14">
-        <img src={logo} className="w-[100px] h-[50px] object-cover mix-blend-multiply" alt="logo" />
+    <footer className="w-full">
+      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-3 xl:grid-cols-6 bg-[#111] px-4 sm:px-8  py-8 lg:py-10">
+        <div className="w-full flex flex-col gap-y-6 items-start justify-start md:col-span-2">
+          <button onClick={() => navigate("/")}>
+            <img
+              src={logo}
+              className="w-[150px] h-[40px] object-cover"
+              alt="logo"
+            />
+          </button>
 
-          <div className="flex items-center gap-x-4">
-            <Link to="https://facebook.com/teesasapp">
-              <img
-                src="https://teesas.com/assets/matric/images/fb-icon.png"
-                alt=""
-              />
+          <p className="text-gray-400 italic">Where business meets family</p>
+        </div>
+
+        <div className="flex flex-col gap-y-6 items-start justify-start">
+          <h2 className="font-semibold text-white text-lg sm:text-2xl">
+            Useful Links
+          </h2>
+
+          <div className="flex flex-col items-start justify-start gap-y-2">
+            <Link to="/" className="text-gray-400">
+              Home
             </Link>
-            <Link to="https://instagram.com/teesasapp/">
-              <img
-                src="https://teesas.com/assets/matric/images/insta-icon.png"
-                alt=""
-              />
-            </Link>
-            <Link to="https://twitter.com/teesasapp">
-              <img
-                src="https://teesas.com/assets/matric/images/x-icon.png"
-                alt=""
-              />
-            </Link>
-            <Link to="https://www.linkedin.com/company/72447145/">
-              <img
-                src="https://teesas.com/assets/matric/images/linked-icon.png"
-                alt=""
-              />
-            </Link>
-            <Link to="https://www.youtube.com/channel/UCKUiNZOfRh7ZWWdILQzviOA">
-              <img
-                src="https://teesas.com/assets/matric/images/youtube-icon.png"
-                alt=""
-              />
-            </Link>
-            <Link to="https://www.tiktok.com/@teesas">
-              <img
-                src="https://teesas.com/assets/matric/images/tiktok-icon.png"
-                alt=""
-              />
+            <Link to="/our-loans" className="text-gray-400">
+              Our Loans
             </Link>
           </div>
         </div>
 
-        <div className="w-full flex flex-col items-center md:col-span-2 md:items-start gap-4">
-          <div className="flex flex-wrap items-center font-semibold text-sm sm:text-base md:items-start gap-6">
-            <Link to="/"> FAQs</Link>
-            <Link to="/"> About Us</Link>
-            <Link to="/"> Privacy Policy</Link>
-            <Link to="/"> Terms and Condition</Link>
-            <Link to="/"> Contact us</Link>
-            <Link to="/"> Donate a device</Link>
-          </div>
-          <div className="flex flex-col items-center sm:items-start">
-            <strong className="flex items-center gap-x-2">
-              Lagos, Nigeria{" "}
-            </strong>
-            Izedon Place, 2 Prince Samuel Adedoyin <br /> St, Ikate, Lekki,
-            Lagos
-          </div>
-        </div>
+        <div className="flex flex-col md:col-span-3 gap-y-6 items-start justify-start">
+          <h2 className="font-semibold text-white text-lg sm:text-2xl">
+            Subscribe to Our NewsLetter
+          </h2>
 
-        <div className="">
-          <div className="flex items-center gap-x-2">
-            <Link to="https://play.google.com/store/apps/details?id=app.teesas">
-              <img
-                src="https://teesas.com/assets/matric/images/g-btn.png"
-                alt=""
-              />
-            </Link>
-            <Link to="">
-              <img
-                src="https://teesas.com/assets/matric/images/apple-btn.png"
-                alt=""
-              />
-            </Link>
+          <div className="w-full flex flex-col gap-y-5 items-start justify-start">
+            <Input
+            type="email"
+            placeholder="Enter your email address"
+            className="w-full rounded-none bg-transparent placeholder:text-gray-500  h-12 border-x-0 border-t-0  border-b border-purple-600" />
+
+            <Button className="backg h-12 rounded-[3rem] text-white">
+              Subscribe
+            </Button>
+
+            <p className="text-gray-400">
+              Stay in the loop on the latest finance tips, product updates, and
+              exclusive offers. Subscribe to our newsletter today!
+            </p>
           </div>
         </div>
       </div>
-
-      <p className="text-center md:text-start mt-4 sm:mt-7">{`© ${new Date().getFullYear()}  GoLearn. All Rights Reserved`}</p>
+      <div className="w-full text-white flex items-center justify-center bg-zinc-800 p-4 sm:p-6">
+        <p>
+          Copyright © <span className="text-purple-600"> Trustflick </span>-{" "}
+          <span>{`${new Date().getFullYear()}.`}</span>{" "}
+          <span>All Rights Reserved</span>
+        </p>
+      </div>
     </footer>
   );
 }

@@ -102,7 +102,7 @@ body {
   transform: translateX(-50%);
 }
 
-.choosing-reason:after {
+.choosing-reason::after {
   position: absolute;
   content: "";
   left: 0;

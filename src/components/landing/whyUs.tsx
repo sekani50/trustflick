@@ -7,14 +7,17 @@ import referral from "../../assets/png/referral.svg"
 import affiliate from "../../assets/png/affiliate-marketing.svg"
 export function WhyUs() {
   return (
-    <div className="mb-8 sm:mb-12  px-4 sm:px-8">
-      <h2 className="font-semibold text-lg text-purple-500 sm:text-3xl mb-3 text-center w-full">
+    <div className="mb-8 sm:mb-12 xl:mb-[400px] ">
+      <h2 className="font-semibold text-lg text-[#4776e6] sm:text-3xl mb-3 text-center w-full">
         Why Us?
       </h2>
       <p className="font-semibold text-center w-full text-base sm:text-xl mb-6 md:mb-12">
         Here are some of the many features that define our uniqueness
       </p>
-      <div className="w-full grid grid-cols-1 choosen-reason gap-4 md:gap-10 xl:gap-4 items-center xl:items-end md:grid-cols-2 xl:grid-cols-3">
+      <div className=" px-4 sm:px-8 w-full grid grid-cols-1 relative  gap-4 md:gap-10 xl:gap-4 items-center xl:items-end md:grid-cols-2 xl:grid-cols-3">
+       <div className="hidden xl:block w-full h-[330px] absolute -bottom-[300px] z-10 inset-x-0">
+        <img alt="" className="w-full h-full" src="https://trustflick.com/assets/landing/img/feature-bg.png" />
+       </div>
         <div className="w-full grid grid-cols-1 gap-6 items-center justify-center md:items-start md:justify-start  h-full">
           <Widget
             image={withdraw}
@@ -36,12 +39,12 @@ export function WhyUs() {
           />
       
         </div>
-        <div className="hidden w-full h-full xl:flex items-center justify-center ">
+        <div className="hidden w-full h-full  xl:flex items-center justify-center ">
           <div className="relative w-[300px] h-[500px]">
             <div className="shadow-shape"></div>
             <img
               src="https://trustflick.com/assets/landing/img/choosing-reason.png"
-              className="h-full w-full object-contain"
+              className="h-full w-full mt-32 object-contain"
               alt=""
             />
           </div>

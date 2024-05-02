@@ -7,6 +7,7 @@ import investor from "../../assets/png/investor.svg";
 import withdraw from "../../assets/png/withdraw (1).svg";
 import { AboutUs } from "./AboutUs";
 import { WhyUs } from "./whyUs";
+import { WhatWeDo } from "./WhatWeDo";
 export default function Landing() {
   return (
     <main className="w-full h-full ">
@@ -38,6 +39,7 @@ export default function Landing() {
       </div>
       <AboutUs/>
       <WhyUs/>
+      <WhatWeDo/>
 
       <Footer />
     </main>

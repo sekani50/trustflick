@@ -35,7 +35,7 @@ export function Hero() {
               Get Started
             </Button>
 
-            <div className="w-full xl:w-[80%] text-zinc-700 hidden sm:grid sm:absolute  sm:-bottom-20 mx-auto inset-x-0 xl:rounded-3xl gap-5 p-4 sm:py-8 px-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-white shadow-lg p-">
+            <div className="w-full 2xl:w-[80%] text-zinc-700 hidden sm:grid sm:absolute  sm:-bottom-20 mx-auto inset-x-0 xl:rounded-lg gap-5 p-4 sm:py-12 px-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-white shadow-lg p-">
               <Widget
                 image={two}
                 header="Register Account"
@@ -55,7 +55,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="w-full xl:w-[80%] text-zinc-700 sm:hidden grid sm:absolute  sm:-bottom-20 mx-auto inset-x-0 xl:rounded-3xl gap-5 p-4 sm:py-8 px-8  grid-cols-1  bg-white shadow-lg ">
+      <div className="w-full 2xl:w-[80%] text-zinc-700 sm:hidden grid sm:absolute  sm:-bottom-20 mx-auto inset-x-0 xl:rounded-md gap-5 p-4 sm:py-12 px-8  grid-cols-1  bg-white shadow-lg ">
         <Widget
           image={two}
           header="Register Account"

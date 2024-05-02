@@ -5,7 +5,7 @@ import { Landing, ContactUs } from "./pages";
 
 const App: FC = () => {
   return (
-    <div className="App w-full h-full text-zinc-700 text-sm sm:text-base">
+    <div className="App w-full h-full text-zinc-700  text-sm sm:text-base">
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
