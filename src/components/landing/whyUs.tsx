@@ -11,7 +11,7 @@ export function WhyUs() {
       <h2 className="font-semibold text-lg text-[#4776e6] sm:text-3xl mb-3 text-center w-full">
         Why Us?
       </h2>
-      <p className="font-semibold text-center w-full text-base sm:text-xl mb-6 md:mb-12">
+      <p className="font-semibold px-4 sm:px-8 text-center w-full text-base sm:text-xl mb-6 md:mb-12">
         Here are some of the many features that define our uniqueness
       </p>
       <div className=" px-4 sm:px-8 w-full grid grid-cols-1 relative  gap-4 md:gap-10 xl:gap-4 items-center xl:items-end md:grid-cols-2 xl:grid-cols-3">
@@ -110,9 +110,9 @@ function Widget({
     >
       <div
         className={cn(
-          " items-center backg rounded-full box-shade justify-center w-[60px] h-[60px] ",
+          " items-center backg rounded-full  justify-center w-[60px] h-[60px] ",
           isLeft && "flex",
-          isRight && "hidden "
+          isRight && "flex md:hidden "
         )}
       >
         <div className="w-[30px] h-[30px]">
@@ -130,9 +130,9 @@ function Widget({
       </div>
       <div
         className={cn(
-          " items-center backg rounded-full box-shade justify-center w-[60px] h-[60px] ",
+          " items-center backg rounded-full  justify-center w-[60px] h-[60px] ",
           isLeft && "hidden",
-          isRight && "md:flex"
+          isRight && "hidden md:flex"
         )}
       >
         <div className="w-[30px] h-[30px]">

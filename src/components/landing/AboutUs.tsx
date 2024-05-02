@@ -33,7 +33,7 @@ export function AboutUs() {
 
           <p className="italic">Banking evolved. For life in hyperspeed.</p>
 
-          <Button className="rounded-[3rem] text-purple-500 bg-white h-14 px-8 sm:px-10">Get Started Now</Button>
+          <Button className="rounded-[3rem] text-purple-500 bg-white h-12 sm:h-14 px-8 sm:px-10">Get Started Now</Button>
         </div>
         <div className="w-full max-w-2xl xl:w-[35%]">
             <img src="https://trustflick.com/assets/landing/img/about-img1.jpg" alt="flick" className="w-full h-fit" />

@@ -16,7 +16,7 @@ export function TopNav() {
         />
       </button>
       <div className="flex items-center md:text-base font-semibold text-gray-50  gap-x-6">
-        <div className="flex items-center gap-x-5">
+        <div className="hidden md:flex items-center gap-x-5">
           <Link
             className={cn("hover:underline", pathname === "/" && "underline")}
             to="/"

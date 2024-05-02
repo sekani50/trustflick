@@ -4,7 +4,7 @@ import world from "../../assets/png/worldwide.svg";
 import blockchain from "../../assets/png/blockchain.svg";
 export function Activities() {
   return (
-    <div className="w-full px-4 sm:px-8 mb-8 sm:mb-12 sm:mt-32">
+    <div className="w-full px-4 sm:px-8 my-8 sm:my-12 sm:mt-32">
       <div className="w-full text-zinc-700 grid grid-cols-1 items-start lg:grid-cols-2 gap-6">
         <div className="w-full flex flex-col gap-y-4">
           <div className=" w-full space-y-2">
@@ -97,7 +97,7 @@ function Widget({
 }) {
   return (
     <div className="grid grid-cols-5 items-start sm:gap-5 justify-start">
-      <div className="flex items-center backg rounded-full box-shade justify-center h-[80px] w-[80px] sm:w-[60px] sm:h-[60px] lg:w-[80px] lg:h-[80px]">
+      <div className="flex items-center backg rounded-full box-shade justify-center w-[60px] h-[60px] ">
         <div className="w-[30px] h-[30px]">
           <img alt="" src={image} className="w-full h-full" />
         </div>
