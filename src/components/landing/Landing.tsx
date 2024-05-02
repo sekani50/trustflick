@@ -1,5 +1,4 @@
-import { Footer } from "../footer/Footer";
-import { TopNav } from "../topNav/TopNav";
+
 import { Activities } from "./Activities";
 import { Hero } from "./Hero";
 import transaction from "../../assets/png/money-transfering.svg";
@@ -10,8 +9,8 @@ import { WhyUs } from "./whyUs";
 import { WhatWeDo } from "./WhatWeDo";
 export default function Landing() {
   return (
-    <main className="w-full h-full ">
-      <TopNav />
+    <>
+    
       <Hero />
       <Activities />
       <div className="w-full text-white h-fit grid grid-cols-1 md:grid-cols-3 backg px-4 sm:px-8 lg:px-10 py-8 sm:py-10">
@@ -41,7 +40,6 @@ export default function Landing() {
       <WhyUs/>
       <WhatWeDo/>
 
-      <Footer />
-    </main>
+    </>
   );
 }
