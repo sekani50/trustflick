@@ -13,7 +13,8 @@ export function Headers({ title }: { title: string }) {
 
       <img
         src="https://trustflick.com/assets/landing/img/breadcrumb-img.png"
-        className="hidden md:block object-contain w-[80%]"
+        className="hidden md:block object-contain w-[200px]"
+        alt="vick"
       />
     </header>
   );

@@ -9,12 +9,12 @@ import {
 } from "../ui/Form";
 import { Input } from "../ui/Input";
 import { ReactSelect } from "../ui/ReactSelect";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { COUNTRY_CODE } from "../../utils/CountryCode";
 import { Button } from "../ui/Button";
 import { Link } from "react-router-dom";
 export default function Register() {
-  const [phoneCountryCode, setPhoneCountryCode] = useState<string>("+234");
+  const [phoneCountryCode, setPhoneCountryCode] = useState<string | undefined>("+234");
   const form = useForm({});
 
   const countriesList = useMemo(() => {
@@ -22,19 +22,42 @@ export default function Register() {
       label: country.name,
       value: country.name,
     }));
-  }, [COUNTRY_CODE]);
+  }, []);
+  const country = form.watch("country");
+
+  useEffect(() => {
+    if (country) {
+      const currentCountryCode = COUNTRY_CODE.find(
+        (v) => v.name === country
+      )?.dial_code;
+
+     
+      setPhoneCountryCode(currentCountryCode);
+    }
+  }, [country]);
+
+  async function onSubmit(values: any) {
+    const payload = {
+      ...values,
+      phoneNumber: phoneCountryCode + values.phoneNumber,
+    };
+  }
   return (
     <>
       <Headers title="Register" />
       <Form {...form}>
-        <form className="text-white w-full backg mx-4 sm:mx-8 flex flex-col items-start justify-start gap-y-3 rounded-lg p-4 sm:p-6">
+        <div className="w-full px-4">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="text-white w-full backg mx-auto max-w-3xl my-10 sm:my-20 flex flex-col items-start justify-start gap-y-3 rounded-lg p-4 sm:p-6"
+        >
           <div className="flex items-center gap-x-3">
-            <span className="border-2 border-white rounded-full h-6 w-6"></span>
+            <span className="border-2 border-white rounded-full h-4 w-4"></span>
             <h2 className="font-semibold text-base sm:text-xl">
               Registration Form
             </h2>
           </div>
-          <div className="space-y-3 w-full">
+          <div className="space-y-4 w-full">
             <FormField
               control={form.control}
               name="firstname"
@@ -146,13 +169,13 @@ export default function Register() {
                 <FormItem className="relative h-fit">
                   <input
                     type="text"
-                    className="!mt-0 text-sm absolute top-[40%]  left-2 text-gray-700 z-10 font-medium h-fit w-fit max-w-[36px] outline-none"
+                    className=" text-sm absolute top-[30%]  left-2 text-gray-700 z-10 font-medium h-fit w-fit max-w-[36px] outline-none"
                     value={phoneCountryCode}
                     onChange={(e) => setPhoneCountryCode(e.target.value)}
                   />
                   <FormControl>
                     <Input
-                      className=" h-12  pl-12"
+                      className=" h-12 rounded-lg  pl-12"
                       placeholder="Enter phone number"
                       {...field}
                       type="tel"
@@ -186,7 +209,7 @@ export default function Register() {
 
           <div className="flex flex-col items-start justify-start gap-y-6 mt-5">
             <div className="flex items-center gap-x-3">
-              <span className="border-2 border-white rounded-full h-6 w-6"></span>
+              <span className="border-2 border-white rounded-full h-4 w-4"></span>
               <h2 className="font-semibold text-base sm:text-xl">
                 Terms and Conditions
               </h2>
@@ -219,6 +242,8 @@ export default function Register() {
             </Link>
           </p>
         </form>
+
+        </div>
       </Form>
     </>
   );
