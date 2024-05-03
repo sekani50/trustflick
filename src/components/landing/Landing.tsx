@@ -11,7 +11,7 @@ export default function Landing() {
     <>
       <Hero />
       <Activities />
-      <div className="w-full text-white h-fit grid grid-cols-1 gap-6 md:gap-0 md:grid-cols-3 backg px-4 sm:px-8 lg:px-10 py-8 sm:py-10">
+      <div className="w-full text-white h-fit hidden grid-cols-1 gap-6 md:gap-0 md:grid-cols-3 backg px-4 sm:px-8 lg:px-10 py-8 sm:py-10">
         <div className="w-full h-full flex items-start md:items-center gap-x-3 justify-start md:justify-center">
           <img src={investor} alt="" className="w-[50px] md:w-[60px]" />
           <div className="flex items-start justify-start flex-col gap-y-2">

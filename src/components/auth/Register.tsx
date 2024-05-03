@@ -49,10 +49,10 @@ export default function Register() {
         <div className="w-full px-4">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="text-white w-full backg mx-auto max-w-3xl my-10 sm:my-20 flex flex-col items-start justify-start gap-y-3 rounded-lg p-4 sm:p-6"
+          className="text-[#0e8233] w-full bg-white shadow mx-auto max-w-3xl my-10 sm:my-20 flex flex-col items-start justify-start gap-y-3 rounded-lg p-4 sm:p-6"
         >
           <div className="flex items-center gap-x-3">
-            <span className="border-2 border-white rounded-full h-4 w-4"></span>
+        
             <h2 className="font-semibold text-base sm:text-xl">
               Registration Form
             </h2>
@@ -209,12 +209,12 @@ export default function Register() {
 
           <div className="flex flex-col items-start justify-start gap-y-6 mt-5">
             <div className="flex items-center gap-x-3">
-              <span className="border-2 border-white rounded-full h-4 w-4"></span>
+             
               <h2 className="font-semibold text-base sm:text-xl">
                 Terms and Conditions
               </h2>
             </div>
-            <div className="rounded-lg p-4 border border-white">
+            <div className="rounded-lg p-4 border border-[#0e8233">
               Please review our privacy policy, which also governs your visit to
               this site, to understand our practices.
               <br />

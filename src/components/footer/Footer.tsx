@@ -44,7 +44,7 @@ export function Footer() {
             <Input
             type="email"
             placeholder="Enter your email address"
-            className="w-full rounded-none bg-transparent placeholder:text-gray-500  h-12 border-x-0 border-t-0  border-b border-purple-600" />
+            className="w-full bg-transparent placeholder:text-gray-500  h-12 rounded-[3rem] border-[#0e8233]" />
 
             <Button className="backg h-12 rounded-[3rem] text-white">
               Subscribe
@@ -59,7 +59,7 @@ export function Footer() {
       </div>
       <div className="w-full text-white flex items-center justify-center bg-zinc-800 p-4 sm:p-6">
         <p>
-          Copyright © <span className="text-purple-600"> Trustflick </span>-{" "}
+          Copyright © <span className="text-[#0e8233]"> Trustflick </span>-{" "}
           <span>{`${new Date().getFullYear()}.`}</span>{" "}
           <span>All Rights Reserved</span>
         </p>

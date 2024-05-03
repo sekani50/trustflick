@@ -47,12 +47,12 @@ export const ReactSelect = React.forwardRef<
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
-            borderColor: state?.isFocused ? "#ffffff" : "#ffffff",
+            borderColor: state?.isFocused ? "#0e8233" : "#0e8233",
             "&:hover": {
-              borderColor: "#ffffff",
+              borderColor: "#0e8233",
             },
             height: "3rem",
-            color:"#ffffff",
+            color:"#64748b", // #0e8233
             backgroundColor: "transparent",
             boxShadow: "0px",
             borderRadius: "6px",
@@ -68,14 +68,14 @@ export const ReactSelect = React.forwardRef<
             ...baseStyles,
             textAlign: "start",
             textDecoration: "capitalize",
-            color:"#ffffff",
+            color:"#64748b",
             fontSize: "14px",
             padding: "4px",
           }),
           placeholder: (baseStyles) => ({
             ...baseStyles,
             textAlign: "start",
-            color: "#ffffff",
+            color: "#64748b",
             fontSize: "14px",
           }),
           menu: (baseStyles) => ({

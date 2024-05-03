@@ -2,15 +2,39 @@ import diploma from "../../assets/png/diploma.svg";
 import solar from "../../assets/png/shield.svg";
 import world from "../../assets/png/worldwide.svg";
 import blockchain from "../../assets/png/blockchain.svg";
+import one from "../../assets/png/one1.svg";
+import two from "../../assets/png/add-user.svg";
+import three from "../../assets/png/coin.svg";
 export function Activities() {
   return (
-    <div className="w-full px-4 sm:px-8 my-8 sm:my-12 sm:mt-32">
-      <div className="w-full text-zinc-700 grid grid-cols-1 items-start lg:grid-cols-2 gap-6">
+    <div className="w-full   ">
+      <div className="w-full py-6 backg my-8 sm:my-12 text-white">
+      <h2 className="text-lg sm:text-3xl text-white font-semibold mb-6 w-full  text-center sm:mb-10">How it Works</h2>
+        <div className="w-full 2xl:w-[80%]  grid  mx-auto gap-5 p-4 sm:py-12 px-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
+              <HowWidget
+                image={two}
+                header="Register Account"
+                text="Register for an account and get verified. It's totally easy and free"
+              />
+              <HowWidget
+                image={three}
+                header="Deposit and Transact"
+                text="Deposit to your account and perform transactions on the fly"
+              />
+              <HowWidget
+                image={one}
+                header="Get Loans"
+                text="Apply for loans and get response in less time"
+              />
+            </div>
+      </div>
+   
+      <div className="w-full px-4 sm:px-8 mb-8 sm:mb-12 text-zinc-700 grid grid-cols-1 items-start lg:grid-cols-2 gap-6">
         <div className="w-full flex flex-col gap-y-4">
           <div className=" w-full space-y-2">
             <h2 className="font-semibold text-lg sm:text-3xl">
               Here is the{" "}
-              <span className="text-purple-600 italic font-[kalam]">
+              <span className="text-[#0e8233] italic font-[kalam]">
                 right place{" "}
               </span>{" "}
               for you to save money
@@ -59,7 +83,7 @@ export function Activities() {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10 lg:gap-6">
+        <div className="w-full  grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10 lg:gap-6">
           <Widget
             image={solar}
             header="Multiple Payment options"
@@ -103,6 +127,27 @@ function Widget({
         </div>
       </div>
       <div className="col-span-4 flex flex-col items-start gap-y-3 justify-start">
+        <h2 className="font-semibold text-lg sm:text-xl">{header}</h2>
+        <p className="">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+
+function HowWidget({
+  image,
+  header,
+  text,
+}: {
+  image: string;
+  header: string;
+  text: string;
+}) {
+  return (
+    <div className="flex items-start gap-x-5 justify-start">
+      <img alt="" src={image} className="w-[50px] xl:w-[70px] object-cover" />
+      <div className="flex flex-col items-start gap-y-3 justify-start">
         <h2 className="font-semibold text-lg sm:text-xl">{header}</h2>
         <p className="">{text}</p>
       </div>
