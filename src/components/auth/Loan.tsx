@@ -126,7 +126,7 @@ export default function Loan() {
     await axios
       .post(
         `https://tflick.onrender.com/user/create/loan`,
-        { userid: userData?.id, payload },
+        { userid: userData?.id, ...payload },
         {
           headers: {
             "Content-Type": "application/json",
@@ -148,7 +148,7 @@ export default function Loan() {
           className: "bg-white",
         });
 
-        navigate("/");
+      //  navigate("/");
       })
       .catch((err) => {
         errorToast(err, toast);
