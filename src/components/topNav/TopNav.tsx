@@ -37,18 +37,13 @@ export function TopNav() {
       </button>
       <div className="flex items-center md:text-base font-semibold text-gray-50  gap-x-6">
         <div className="hidden md:flex items-center gap-x-5">
-          <Link
-            className={cn("hover:underline", pathname === "/" && "underline")}
-            to="/"
-          >
-            Home
-          </Link>
+         
 
           <Link
             className={cn("hover:underline ", pathname === "" && "underline")}
-            to=""
+            to="/loan"
           >
-            Our Loans
+            Apply for Loan
           </Link>
         </div>
 
