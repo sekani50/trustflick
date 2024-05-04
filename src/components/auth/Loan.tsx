@@ -123,7 +123,12 @@ export default function Loan() {
     };
 
     await axios
-      .post(`https://tflick.onrender.com/user/create/loan`, {userid: userData?.token, payload})
+      .post(`https://tflick.onrender.com/user/create/loan`, {userid: userData?.id, payload}, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userData?.token}`,
+        },
+      })
       .then((res) => {
         toast({
           message: (
