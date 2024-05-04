@@ -148,7 +148,7 @@ export default function Loan() {
           className: "bg-white",
         });
 
-      //  navigate("/");
+        //  navigate("/");
       })
       .catch((err) => {
         errorToast(err, toast);
@@ -181,6 +181,12 @@ export default function Loan() {
               processing your loan application. It’s usually a percentage of the
               loan amount, commonly around 1-5%, and is often deducted from the
               loan proceeds.
+            </p>
+            <p className="text-[#0e8233]">
+              Ready to take the first step towards securing your financial
+              future? TrustFlick makes it simple and convenient to apply for a
+              loan that suits your needs, whether personal or business-related.
+              Fill out the form below to get started
             </p>
             <div className="space-y-3 w-full">
               <FormField
@@ -271,3 +277,36 @@ export default function Loan() {
     </>
   );
 }
+
+/**
+ "previous_zipcode":"poikeu",
+    "current_zipcode":"poikeu",
+    "state":"poikeu",
+    "city":"poikeu",
+    "name":"poikeu",
+    "ssn":"poikeu",
+    "dob":"poikeu",
+    "alternative_phone":"poikeu",
+    "phone":"poikeu",
+    "email":"poikeu",
+    "employer_address":"poikeu",
+    "employer_state":"poikeu",
+    "employer_status":"poikeu",
+    "employer_city":"poikeu",
+    "employer_name":"poikeu",
+    "employer_zipcode":"poikeu",
+    "monthly_income":200,
+    "length_of_employment":12,
+    "position":"poikeu",
+    "credit_score":12,
+    "total_monthly_debt":12,
+    "monthly_expenses":12,
+    "rental_payment":12,
+    "loan_amount":12,
+    "loan_purpose":"polirku",
+    "desired_loan_term":12,
+    "account_name":"poikeiu",
+    "bank_name":"poikeiu",
+    "account_number":"poikeiu",
+    "routing_number":"poikeiu"
+ */
