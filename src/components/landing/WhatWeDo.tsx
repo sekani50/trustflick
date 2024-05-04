@@ -1,7 +1,7 @@
 
 export function WhatWeDo() {
   return (
-    <div className="w-full px-4 py-8  sm:py-10 sm:px-8 my-8 backg sm:my-12 backg flex items-start justify-start flex-col xl:flex-row gap-8">
+    <div className="w-full px-4 py-8  sm:py-10 sm:px-8 my-8 backg sm:my-12 backg hidden items-start justify-start flex-col xl:flex-row gap-8">
       <div className="flex text-white flex-col items-start justify-start gap-y-4 sm:gap-y-6 w-full xl:w-[70%]">
         <h1 className="text-xl sm:text-4xl font-semibold">
           We Accept Local Currency, Also CryptoCurrencies
