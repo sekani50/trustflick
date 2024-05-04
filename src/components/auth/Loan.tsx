@@ -46,8 +46,7 @@ export default function Loan() {
     }
     const userData = JSON.parse(user);
     setLoading(true);
-    let bussiness: any[] = [];
-    let collateral: any[] = [];
+ 
     const promise1 = await new Promise((resolve) => {
       if (values?.proof_of_income[0]) {
         const data = getSingleFileUrl(values?.proof_of_income[0]);
@@ -65,60 +64,34 @@ export default function Loan() {
         resolve("");
       }
     });
+
+    const promise4 = await new Promise((resolve) => {
+      if (values?.bussiness_documentation[0]) {
+        const data = getSingleFileUrl(values?.bussiness_documentation[0]);
+        resolve(data);
+      } else {
+        resolve("");
+      }
+    });
+    const promise5 = await new Promise((resolve) => {
+      if (values?.collateral_document[0]) {
+        const data = getSingleFileUrl(values?.collateral_document[0]);
+        resolve(data);
+      } else {
+        resolve("");
+      }
+    });
     const proof = await promise1;
     const identification = await promise2;
+    const bussiness = await promise4
+    const collateral = await promise5
 
-    if (values?.bussiness_documentation?.length > 1) {
-      for (let col of values?.bussiness_documentation) {
-        const promise6 = new Promise((resolve) => {
-          const data = getSingleFileUrl(col);
-          resolve(data);
-        });
 
-        const coll = await promise6;
-        bussiness.push(coll);
-      }
-    } else if (values?.bussiness_documentation) {
-      const promise4 = await new Promise((resolve) => {
-        if (values?.bussiness_documentation[0]) {
-          const data = getSingleFileUrl(values?.bussiness_documentation[0]);
-          resolve(data);
-        } else {
-          resolve("");
-        }
-      });
 
-      const biz = await promise4;
-      bussiness = [biz];
-    }
-
-    if (values?.collateral_document?.length > 1) {
-      for (let col of values?.collateral_document) {
-        const promise5 = new Promise((resolve) => {
-          const data = getSingleFileUrl(col);
-          resolve(data);
-        });
-
-        const coll = await promise5;
-
-        collateral.push(coll);
-      }
-    } else if (values?.collateral_document) {
-      const promise6 = await new Promise((resolve) => {
-        if (values?.collateral_document[0]) {
-          const data = getSingleFileUrl(values?.collateral_document[0]);
-          resolve(data);
-        } else {
-          resolve("");
-        }
-      });
-
-      const coll = await promise6;
-      collateral = [coll];
-    }
 
     const payload = {
       ...values,
+      email: userData?.email,
       proof_of_income: proof,
       identification,
       bussiness_documentation: bussiness,
@@ -814,7 +787,6 @@ export default function Loan() {
                       <Input
                         placeholder=""
                         type="file"
-                        multiple
                         className="w-full h-12 bg-transparent px-4 rounded-lg "
                         {...form.register("bussiness_documentation")}
                       />
@@ -833,7 +805,6 @@ export default function Loan() {
                       <Input
                         placeholder=""
                         type="file"
-                        multiple
                         className="w-full h-12 bg-transparent px-4 rounded-lg "
                         {...form.register("collateral_document")}
                       />

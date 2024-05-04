@@ -71,14 +71,14 @@ export function TopNav() {
         {!userData || !userData?.token ? (
           <Button
             onClick={() => navigate("/register")}
-            className="rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+            className="hidden md:block rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
           >
             Sign Up
           </Button>
         ) : (
           <Button
             onClick={logOut}
-            className="rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+            className="hidden md:block rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
           >
             Log Out
           </Button>
@@ -101,7 +101,7 @@ export function TopNav() {
           </button>
           <button
             onClick={() => {
-              navigate("/");
+              navigate("/loan");
               onClose();
             }}
           >
