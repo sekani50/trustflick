@@ -12,7 +12,7 @@ import { Input } from "../ui/Input";
 import { MdCheck } from "react-icons/md";
 import { Button } from "../ui/Button";
 import axios from "axios";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { errorToast } from "../../utils/errorToast";
 import { useToast } from "../../utils/toastContainer";
 import { useState } from "react";
@@ -27,22 +27,23 @@ export default function Loan() {
   const { toast } = useToast();
 
   async function onSubmit(values: any) {
-   
-    const user = localStorage.getItem("trustUser")
+    const user = localStorage.getItem("trustUser");
     if (!user) {
-        toast({
-            message: (
-              <div className="flex items-center gap-x-2">
-                <IoCloseCircle className="text-red-700 text-[22px]" />
-                <p>Only registered users can access this... Proceed to registration.</p>
-              </div>
-            ),
-            className: "bg-white",
-        })
-        navigate("/register")
-        return
+      toast({
+        message: (
+          <div className="flex items-center gap-x-2">
+            <IoCloseCircle className="text-red-700 text-[22px]" />
+            <p>
+              Only registered users can access this... Proceed to registration.
+            </p>
+          </div>
+        ),
+        className: "bg-white",
+      });
+      navigate("/register");
+      return;
     }
-   const userData = JSON.parse(user)
+    const userData = JSON.parse(user);
     setLoading(true);
     let bussiness: any[] = [];
     let collateral: any[] = [];
@@ -123,12 +124,16 @@ export default function Loan() {
     };
 
     await axios
-      .post(`https://tflick.onrender.com/user/create/loan`, {userid: userData?.id, payload}, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userData?.token}`,
-        },
-      })
+      .post(
+        `https://tflick.onrender.com/user/create/loan`,
+        { userid: userData?.id, payload },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userData?.token}`,
+          },
+        }
+      )
       .then((res) => {
         toast({
           message: (

@@ -8,7 +8,7 @@ import three from "../../assets/png/coin.svg";
 export function Activities() {
   return (
     <div className="w-full   ">
-      <div className="w-full py-6 backg my-8 sm:my-12 text-white">
+      <div className="w-full py-6 backg mb-8 sm:mb-12 text-white">
       <h2 className="text-lg sm:text-3xl text-white font-semibold mb-6 w-full  text-center sm:mb-10">How it Works</h2>
         <div className="w-full 2xl:w-[80%]  grid  mx-auto gap-5 p-4 sm:py-12 px-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
               <HowWidget

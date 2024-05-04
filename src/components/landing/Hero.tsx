@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/Button";
 
 export function Hero() {
+  const navigate = useNavigate()
   return (
     <>
       <div className="w-full h-[500px] sm:h-[650px] banner-bg ">
@@ -29,8 +31,10 @@ export function Hero() {
               never waned.
             </p>
 
-            <Button className="text-[#0e8233] bg-white h-12 sm:h-14 rounded-[3rem] px-10 sm:px-20 font-semibold">
-              Get Started
+            <Button
+            onClick={() => navigate("/loan")}
+            className="text-[#0e8233] bg-white h-12 sm:h-14 rounded-[3rem] px-10 sm:px-20 font-semibold">
+              Apply for Loan
             </Button>
           </div>
         </div>

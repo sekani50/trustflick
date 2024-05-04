@@ -152,7 +152,7 @@ export default function Register() {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder=""
+                        placeholder="Password"
                         type="password"
                         className="w-full h-12 bg-transparent px-4 rounded-lg "
                         {...field}
