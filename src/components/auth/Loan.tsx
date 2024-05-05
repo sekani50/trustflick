@@ -19,7 +19,7 @@ import { useToast } from "../../utils/toastContainer";
 import { useState } from "react";
 import { Loader2Icon } from "lucide-react";
 import { getSingleFileUrl } from "../../utils/getFileUrl";
-import { IoCloseCircle } from "react-icons/io5";
+
 
 export default function Loan() {
   const form = useForm<any>({});
@@ -28,23 +28,7 @@ export default function Loan() {
   const { toast } = useToast();
 
   async function onSubmit(values: any) {
-    const user = localStorage.getItem("trustUser");
-    if (!user) {
-      toast({
-        message: (
-          <div className="flex items-center gap-x-2">
-            <IoCloseCircle className="text-red-700 text-[22px]" />
-            <p>
-              Only registered users can access this... Proceed to registration.
-            </p>
-          </div>
-        ),
-        className: "bg-white",
-      });
-      navigate("/register");
-      return;
-    }
-    const userData = JSON.parse(user);
+  
     setLoading(true);
  
     const promise1 = await new Promise((resolve) => {
@@ -91,7 +75,7 @@ export default function Loan() {
 
     const payload = {
       ...values,
-      email: userData?.email,
+     
       proof_of_income: proof,
       identification,
       bussiness_documentation: bussiness,
@@ -101,13 +85,8 @@ export default function Loan() {
     await axios
       .post(
         `https://tflick.onrender.com/user/create/loan`,
-        { userid: userData?.id, ...payload },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${userData?.token}`,
-          },
-        }
+        {  ...payload },
+       
       )
       .then((res) => {
         toast({
@@ -123,7 +102,7 @@ export default function Loan() {
           className: "bg-white",
         });
 
-        //  navigate("/");
+         navigate("/");
       })
       .catch((err) => {
         errorToast(err, toast);
@@ -179,6 +158,24 @@ export default function Loan() {
                         type="text"
                         className="w-full h-12 bg-transparent px-4 rounded-lg "
                         {...form.register("name")}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+                  <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="johndoe@gmail.com"
+                        type="email"
+                        className="w-full h-12 bg-transparent px-4 rounded-lg "
+                        {...form.register("email")}
                       />
                     </FormControl>
                     <FormMessage />

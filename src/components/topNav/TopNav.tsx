@@ -71,14 +71,14 @@ export function TopNav() {
         {!userData || !userData?.token ? (
           <Button
             onClick={() => navigate("/register")}
-            className="hidden md:block rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+            className="hidden  rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
           >
             Sign Up
           </Button>
         ) : (
           <Button
             onClick={logOut}
-            className="hidden md:block rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+            className="hidden  rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
           >
             Log Out
           </Button>
@@ -114,7 +114,7 @@ export function TopNav() {
                 navigate("/register");
                 onClose();
               }}
-              className="rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+              className="hidden rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
             >
               Sign Up
             </Button>
@@ -124,7 +124,7 @@ export function TopNav() {
                 logOut();
                 onClose();
               }}
-              className="rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
+              className="hidden rounded-[3rem] px-6 border-gray-50 border-2  font-semibold backg"
             >
               Log Out
             </Button>
